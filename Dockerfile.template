@@ -2,6 +2,8 @@
 # see more about dockerfile templates here:http://docs.resin.io/pages/deployment/docker-templates
 FROM resin/%%RESIN_MACHINE_NAME%%-alpine:latest
 
+RUN apk update && apk add nmap
+
 # Set our working directory
 WORKDIR /usr/src/app
 
