@@ -13,3 +13,5 @@ COPY . ./
 # switch on systemd init system in container
 ENV INITSYSTEM on
 
+# Start.sh will run when the container starts
+CMD ["./docker/start.sh"]
