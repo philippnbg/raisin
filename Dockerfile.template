@@ -1,0 +1,13 @@
+# base-image for python on any machine using a template variable,
+# see more about dockerfile templates here:http://docs.resin.io/pages/deployment/docker-templates
+FROM resin/%%RESIN_MACHINE_NAME%%-alpine:latest
+
+# Set our working directory
+WORKDIR /usr/src/app
+
+# This will copy all files in our root to the working  directory in the container
+COPY . ./
+
+# switch on systemd init system in container
+ENV INITSYSTEM on
+
